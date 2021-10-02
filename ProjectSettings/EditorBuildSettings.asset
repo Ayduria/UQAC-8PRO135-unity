@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/parcours.unity
     guid: 359d8d6971a9b6a429f00bfb47ac0c0a
   - enabled: 1
+    path: Assets/Scenes/finish.unity
+    guid: a9b9018a1a4561d418b2a471b15d52b5
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
