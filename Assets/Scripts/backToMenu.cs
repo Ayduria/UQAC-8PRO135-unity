@@ -8,7 +8,7 @@ public class backToMenu : MonoBehaviour
 
     public void backMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + -1);
+        SceneManager.LoadScene(1);
     }
 
 }
