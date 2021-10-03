@@ -54,8 +54,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetQuality(int qualityIndex) 
     {
-        //QualitySettings.SetQualityLevel(qualityIndex);
-        QualitySettings.SetQualityLevel(2);
+        QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     public void SetFullScreen(bool isFullscreen)

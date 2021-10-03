@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SoundOnCollision : MonoBehaviour
 {
-    public AudioSource collisionSound;
+    public SceneLoader sceneLoader;
+    private AudioSource collisionSound;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class SoundOnCollision : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

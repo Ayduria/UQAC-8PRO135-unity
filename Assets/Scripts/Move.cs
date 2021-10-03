@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour
 {
     private Rigidbody rb;
-    public SphereCollider col;
+    private SphereCollider col;
     private float moveSpeed;
     private float dirX, dirZ;
     public float jumpForce;
@@ -26,19 +27,14 @@ public class Move : MonoBehaviour
         dirX = Input.GetAxis("Horizontal") * moveSpeed;
         dirZ = Input.GetAxis("Vertical") * moveSpeed;
 
-        if (IsGrounded())
-        {
-            Debug.Log("Grounded");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Jump");
-        }
-
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
+        if (this.gameObject.transform.position.y < -5)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

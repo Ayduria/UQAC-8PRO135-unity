@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class OnSphereCollision : MonoBehaviour
 {
-    public AudioSource collisionSound;
+    private AudioSource collisionSound;
 
     // Start is called before the first frame update
     void Start()

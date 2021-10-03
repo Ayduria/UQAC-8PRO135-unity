@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Decompte : MonoBehaviour
 {
+    public SceneLoader sceneLoader;
     public float time = 3f;
 
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class Decompte : MonoBehaviour
 
         if (time == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            sceneLoader.LoadNextScene();
         }
     }
 }
