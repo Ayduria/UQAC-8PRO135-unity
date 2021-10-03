@@ -12,9 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
     guid: 6e4275b3dc75dc8428fb6b45b7e9c822
   - enabled: 1
+    path: Assets/Scenes/decompte.unity
+    guid: 605258d0ef4b9b549801db62133d0cd7
+  - enabled: 1
+    path: Assets/Scenes/DropBall.unity
+    guid: 90e4c7862f88cbd45ba8c31bfa802f94
+  - enabled: 1
+    path: Assets/Scenes/parcours.unity
+    guid: 359d8d6971a9b6a429f00bfb47ac0c0a
+  - enabled: 1
+    path: Assets/Scenes/finish.unity
+    guid: a9b9018a1a4561d418b2a471b15d52b5
+  - enabled: 1
     path: Assets/Scenes/settings.unity
     guid: ec3612a897cbee9448752bacdc8796c0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

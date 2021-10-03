@@ -5,16 +5,17 @@ using UnityEngine.SceneManagement;
 
 
 public class MainMenu : MonoBehaviour {
+
+    public SceneLoader sceneLoader;
+
     public void PlayGame()
     {
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-    
+        sceneLoader.LoadNextScene();
     }
 
     public void SettingsMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(6);
     }
 
     public void QuitGame()
@@ -22,6 +23,4 @@ public class MainMenu : MonoBehaviour {
         Debug.Log("Quit game");
         Application.Quit();
     }
-
-
 }
