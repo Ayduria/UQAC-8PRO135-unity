@@ -8,12 +8,11 @@ public class RestartGameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(WaitAndReturnToMenu());
+        Invoke("ReturnToMenu", 3.0f);
     }
 
-    IEnumerator WaitAndReturnToMenu()
+     public void ReturnToMenu()
     {
-        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(1);
     }
 }
