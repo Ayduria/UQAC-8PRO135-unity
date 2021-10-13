@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EditorTests
 {
@@ -10,16 +12,14 @@ public class EditorTests
     [Test]
     public void EditorTestsSimplePasses()
     {
-        // Use the Assert class to test conditions
+        
     }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator EditorTestsWithEnumeratorPasses()
+    public IEnumerator Test()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
         yield return null;
     }
 }

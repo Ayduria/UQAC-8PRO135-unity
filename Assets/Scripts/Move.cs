@@ -29,13 +29,18 @@ public class Move : MonoBehaviour
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            Jump();
         }
 
         if (this.gameObject.transform.position.y < -5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+
+    void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     void FixedUpdate()

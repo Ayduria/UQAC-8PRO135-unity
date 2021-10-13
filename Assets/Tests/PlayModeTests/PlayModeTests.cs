@@ -4,14 +4,19 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayModeTests
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void PlayModeTestsSimplePasses()
+    public void TestForJumpMovement()
     {
-        // Use the Assert class to test conditions
+        GameObject sphere = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Sphere"));
+        float y = sphere.transform.position.y;
+        sphere.SendMessage("Jump");
+        float updatedY = sphere.transform.position.y;
+        Assert.AreNotEqual(y, updatedY);
     }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
@@ -26,8 +31,23 @@ public class PlayModeTests
 
         yield return new WaitForSeconds(0.1f);
 
-        Scene sceneTransitionedTo = SceneManager.GetActiveScene();
+        string sceneTransitionedTo = SceneManager.GetActiveScene().name;
 
-        Assert.AreEqual(sceneTransitionedTo.name, "menu");
+        Assert.AreEqual(sceneTransitionedTo, "menu");
+    }
+
+    [UnityTest]
+    public IEnumerator SettingsButtonLeadsToSettings()
+    {
+        var gameObject = new GameObject();
+        var menu = gameObject.AddComponent<MainMenu>();
+
+        menu.SettingsMenu();
+
+        yield return new WaitForSeconds(0.1f);
+
+        string sceneTransitionedTo = SceneManager.GetActiveScene().name;
+
+        Assert.AreEqual(sceneTransitionedTo, "settings");
     }
 }
