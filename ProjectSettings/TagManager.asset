@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Trap
+  - Platform
+  - Platform Bonus
   layers:
   - Default
   - TransparentFX

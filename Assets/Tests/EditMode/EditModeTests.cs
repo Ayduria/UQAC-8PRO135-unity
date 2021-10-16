@@ -9,12 +9,32 @@ using UnityEngine.SceneManagement;
 public class EditModeTests
 {
     [Test]
-    public void QuitButtonQuitsGame()
-    {
-        var menu = new GameObject().AddComponent<MainMenu>().GetComponent<MainMenu>();
-        var button = GameObject.Find("/CanvasMenu/MainMenu/BoutonQuit").GetComponent<Button>();
-        button.onClick.AddListener(menu.QuitGame);
-        button.onClick.Invoke();
-        Assert.IsTrue(menu.QuitInvoked);
+    public void scoreGivesCorrectValue() {
+
+        var scoreScript = new GameObject().AddComponent<Score>().GetComponent<Score>();
+
+        var platformTouched = 5;
+        var trapTouched = 2;
+        var bonusTouched = true;
+
+        var expectedScore = (5 * 2 - 2)*3;
+        var score = scoreScript.calculateScore(platformTouched,trapTouched,bonusTouched);
+        Assert.AreEqual(expectedScore, score);
+
     }
-}
+
+    [Test]
+    public void scoreCantBeNegative()
+    {
+
+        var scoreScript = new GameObject().AddComponent<Score>().GetComponent<Score>();
+
+        var platformTouched = 3;
+        var trapTouched = 10;
+        var bonusTouched = false;
+
+        var score = scoreScript.calculateScore(platformTouched, trapTouched, bonusTouched);
+        Assert.AreEqual(0, score);
+    }
+
+   }

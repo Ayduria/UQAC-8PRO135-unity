@@ -44,6 +44,22 @@ public class PlayModeTests
     }
 
     [UnityTest]
+    public IEnumerator QuitButtonQuitsGame()
+    {
+        SceneManager.LoadScene("menu", LoadSceneMode.Single);
+        yield return new WaitForSeconds(0.1f);
+
+        var menu = new GameObject().AddComponent<MainMenu>().GetComponent<MainMenu>();
+        var button = GameObject.Find("/CanvasMenu/MainMenu/BoutonQuit").GetComponent<Button>();
+
+        button.onClick.AddListener(menu.QuitGame);
+        button.onClick.Invoke();
+        yield return new WaitForSeconds(0.1f); 
+
+        Assert.IsTrue(menu.QuitInvoked);
+    }
+
+    [UnityTest]
     public IEnumerator EndSceneSwitchesBackToMainMenu()
     {
         var endScreen = new GameObject().AddComponent<RestartGameLoop>();

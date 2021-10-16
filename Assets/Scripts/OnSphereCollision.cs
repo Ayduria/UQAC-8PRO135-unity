@@ -15,7 +15,7 @@ public class OnSphereCollision : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Default"))
         {
             collisionSound.Play();
         }
