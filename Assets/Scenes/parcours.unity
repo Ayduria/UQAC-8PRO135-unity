@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 16978371}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 34009849}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Ground
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,6 +522,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fb0571de6446f438c850e041f38e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &737001477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737001475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47447ed566151cc40860f7eeba75a4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &737001482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 559008913487195971, guid: 3dff30aaea8850e4e9dae11d7215e957, type: 3}
@@ -557,7 +569,7 @@ GameObject:
   - component: {fileID: 955032895}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Ground
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -652,7 +664,7 @@ GameObject:
   - component: {fileID: 1196143567}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Ground
+  m_TagString: Platform Bonus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,7 +759,7 @@ GameObject:
   - component: {fileID: 1343671552}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,7 +796,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a7e13976c94c7c44e9daa4be0fda7303, type: 2}
+  - {fileID: 2100000, guid: f072fa729851a4f42b540a53d4823014, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -953,7 +965,7 @@ GameObject:
   - component: {fileID: 1841698794}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Ground
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

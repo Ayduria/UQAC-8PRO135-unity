@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e35394bb8716a4caa07e7cef002e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoader: {fileID: 2569285642260058330}
+  QuitInvoked: 0
 --- !u!1 &1036484348
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +813,7 @@ GameObject:
   - component: {fileID: 1258440078}
   - component: {fileID: 1258440077}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1470,17 +1470,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &2569285642260058330 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6685948422956715322, guid: 64960141b7e2155469aa63a5824129be, type: 3}
-  m_PrefabInstance: {fileID: 9182466936125464032}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c89bc04457302469c37b1ea489f45d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9182466936125464032
 PrefabInstance:
   m_ObjectHideFlags: 0

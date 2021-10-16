@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public SceneLoader sceneLoader;
+    public bool QuitInvoked = false;
 
     public void PlayGame()
     {
-        sceneLoader.LoadNextScene();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void SettingsMenu()
@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour {
 
     public void QuitGame()
     {
-        Debug.Log("Quit game");
+        QuitInvoked = true;
         Application.Quit();
     }
 }
