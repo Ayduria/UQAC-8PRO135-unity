@@ -11,7 +11,7 @@ public class PlayModeTests
     [UnityTest]
     public IEnumerator PlayButtonLaunchesGame()
     {
-        SceneManager.LoadScene("menu", LoadSceneMode.Single);
+        SceneManager.LoadScene("menuGrassball", LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f);
         int sceneTransitionedFrom = SceneManager.GetActiveScene().buildIndex;
 
@@ -29,7 +29,7 @@ public class PlayModeTests
     [UnityTest]
     public IEnumerator SettingsButtonLeadsToSettings()
     {
-        SceneManager.LoadScene("menu", LoadSceneMode.Single);
+        SceneManager.LoadScene("menuGrassball", LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f);
 
         var menu = new GameObject().AddComponent<MainMenu>().GetComponent<MainMenu>();
@@ -46,7 +46,7 @@ public class PlayModeTests
     [UnityTest]
     public IEnumerator QuitButtonQuitsGame()
     {
-        SceneManager.LoadScene("menu", LoadSceneMode.Single);
+        SceneManager.LoadScene("menuGrassball", LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f);
 
         var menu = new GameObject().AddComponent<MainMenu>().GetComponent<MainMenu>();
