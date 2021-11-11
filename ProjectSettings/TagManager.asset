@@ -4,24 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Trap
   - Platform
-  - Platform Bonus
+  - Projectile
+  - Key
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Character
+  - 
   - Water
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Platforms
+  - Background
+  - Enemies
+  - PlayerInvincible
   - 
   - 
   - 
