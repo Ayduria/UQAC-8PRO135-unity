@@ -11,7 +11,7 @@ public class PlayModeTests
     [UnityTest]
     public IEnumerator PlayButtonLaunchesGame()
     {
-        SceneManager.LoadScene("menuGrassball", LoadSceneMode.Single);
+        SceneManager.LoadScene("menu", LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f);
         int sceneTransitionedFrom = SceneManager.GetActiveScene().buildIndex;
 
@@ -23,14 +23,15 @@ public class PlayModeTests
         yield return new WaitForSeconds(0.1f);
         int sceneTransitionedTo = SceneManager.GetActiveScene().buildIndex;
 
-        Assert.AreEqual(sceneTransitionedTo, sceneTransitionedFrom+1);
+        Assert.AreEqual(sceneTransitionedTo, sceneTransitionedFrom+2);
     }
 
     [UnityTest]
     public IEnumerator SettingsButtonLeadsToSettings()
     {
-        SceneManager.LoadScene("menuGrassball", LoadSceneMode.Single);
+        SceneManager.LoadScene("menu", LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f);
+        int sceneTransitionedFrom = SceneManager.GetActiveScene().buildIndex;
 
         var menu = new GameObject().AddComponent<MainMenu>().GetComponent<MainMenu>();
         var button = GameObject.Find("/CanvasMenu/MainMenu/BoutonOptions").GetComponent<Button>();
@@ -40,13 +41,13 @@ public class PlayModeTests
         yield return new WaitForSeconds(0.1f);
         int sceneTransitionedTo = SceneManager.GetActiveScene().buildIndex;
 
-        Assert.AreEqual(sceneTransitionedTo, 6);
+        Assert.AreEqual(sceneTransitionedTo, sceneTransitionedFrom + 1);
     }
 
     [UnityTest]
     public IEnumerator QuitButtonQuitsGame()
     {
-        SceneManager.LoadScene("menuGrassball", LoadSceneMode.Single);
+        SceneManager.LoadScene("menu", LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f);
 
         var menu = new GameObject().AddComponent<MainMenu>().GetComponent<MainMenu>();
