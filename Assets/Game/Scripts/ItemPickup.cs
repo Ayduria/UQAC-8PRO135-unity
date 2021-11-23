@@ -10,7 +10,8 @@ public class ItemPickup : MonoBehaviour
     private int totalEnemyCount;
     public Text lawnmowerCount;
     public Text enemyCount;
-    private AudioSource pickupSound;
+    public AudioSource pickupSound;
+    public AudioSource enemyKilled;
     private GameObject[] cptEnnemis;
 
     private void Start()
@@ -23,7 +24,6 @@ public class ItemPickup : MonoBehaviour
     {
         lawnmowerCount.text = "Tondeuses: " + totalLawnmowerCount;
         enemyCount.text = "Ennemis restants: " + totalEnemyCount;
-        pickupSound = GetComponent<AudioSource>();
 
         if (totalEnemyCount == 0)
         {
@@ -45,6 +45,7 @@ public class ItemPickup : MonoBehaviour
             if (totalLawnmowerCount > 0)
             {
                 Destroy(hit.gameObject);
+                enemyKilled.Play();
                 totalLawnmowerCount--;
                 totalEnemyCount--;
             } else {
