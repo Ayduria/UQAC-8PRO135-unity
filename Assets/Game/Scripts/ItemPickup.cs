@@ -12,12 +12,13 @@ public class ItemPickup : MonoBehaviour
     public Text enemyCount;
     public AudioSource pickupSound;
     public AudioSource enemyKilled;
-    private GameObject[] cptEnnemis;
+    private GameObject[] ennemies;
+    public GameObject postProcessing;
 
     private void Start()
     {
-        cptEnnemis = GameObject.FindGameObjectsWithTag("Enemy");
-        totalEnemyCount = cptEnnemis.Length;
+        ennemies = GameObject.FindGameObjectsWithTag("Enemy");
+        totalEnemyCount = ennemies.Length;
     }
 
     private void Update()
@@ -29,6 +30,30 @@ public class ItemPickup : MonoBehaviour
         {
             SceneManager.LoadScene("Victory");
         }
+
+        GameObject closestEnemy = null;
+        float distance = Mathf.Infinity;
+
+        Vector3 position = transform.position;
+        foreach(GameObject enemy in ennemies)
+        {
+            Vector3 diff = enemy.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closestEnemy = enemy;
+                distance = curDistance;
+            }
+        }
+
+        if (distance < 50)
+        {
+            postProcessing.SetActive(true);
+        } else
+        {
+            postProcessing.SetActive(false);
+        }
+
     }
 
     void OnCollisionEnter(Collision hit)
@@ -50,7 +75,6 @@ public class ItemPickup : MonoBehaviour
                 totalEnemyCount--;
             } else {
                 Debug.Log("You died lol");
-                Destroy(gameObject);
             }
         }
     }
