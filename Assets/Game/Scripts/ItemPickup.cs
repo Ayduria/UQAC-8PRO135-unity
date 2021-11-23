@@ -31,7 +31,7 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
+    void OnCollisionEnter(Collision hit)
     {
         if (hit.gameObject.tag == "Lawnmower")
         {
