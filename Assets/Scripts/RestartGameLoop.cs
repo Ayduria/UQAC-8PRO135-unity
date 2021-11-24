@@ -24,7 +24,15 @@ public class RestartGameLoop : MonoBehaviour
         Invoke("ReturnToMenu", time);
     }
 
-     public void ReturnToMenu()
+    private void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
+
+    public void ReturnToMenu()
     {
         SceneManager.LoadScene(1);
     }
