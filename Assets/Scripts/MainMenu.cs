@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour {
 
     public bool QuitInvoked = false;
 
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);

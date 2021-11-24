@@ -13,6 +13,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         characterAnimator = gameObject.GetComponent<Animator>();
     }
 
