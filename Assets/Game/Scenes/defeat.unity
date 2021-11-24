@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 744845150}
   - component: {fileID: 744845149}
   - component: {fileID: 744845148}
+  - component: {fileID: 744845152}
   m_Layer: 5
   m_Name: defeatScreen
   m_TagString: Untagged
@@ -476,6 +477,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &744845152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744845147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a4830deabf25b4abd1eaf661a0f1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &906307212
 GameObject:
   m_ObjectHideFlags: 0

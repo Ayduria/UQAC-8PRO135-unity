@@ -15,20 +15,17 @@ public class ItemPickup : MonoBehaviour
     private GameObject[] ennemies;
     public GameObject postProcessing;
 
-    private void Start()
+    private void Update()
     {
         ennemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalEnemyCount = ennemies.Length;
-    }
 
-    private void Update()
-    {
         lawnmowerCount.text = "Tondeuses: " + totalLawnmowerCount;
         enemyCount.text = "Ennemis restants: " + totalEnemyCount;
 
         if (totalEnemyCount == 0)
         {
-            SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene("victory");
         }
 
         GameObject closestEnemy = null;
@@ -72,9 +69,8 @@ public class ItemPickup : MonoBehaviour
                 Destroy(hit.gameObject);
                 enemyKilled.Play();
                 totalLawnmowerCount--;
-                totalEnemyCount--;
             } else {
-                Debug.Log("You died lol");
+                SceneManager.LoadScene("defeat");
             }
         }
     }

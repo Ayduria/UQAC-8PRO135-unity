@@ -6,12 +6,22 @@ using UnityEngine.UI;
 
 public class RestartGameLoop : MonoBehaviour
 {
-    
+    string sceneName;
+    float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("ReturnToMenu", 3.0f);
+        sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName == "victory")
+        {
+            time = 5.0f;
+        } else if (sceneName == "defeat")
+        {
+            time = 8.0f;
+        }
+        
+        Invoke("ReturnToMenu", time);
     }
 
      public void ReturnToMenu()
