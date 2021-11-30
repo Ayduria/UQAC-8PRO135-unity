@@ -28,7 +28,7 @@ public class RestartGameLoop : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            SceneManager.LoadScene(1);
+            ReturnToMenu();
         }
     }
 
