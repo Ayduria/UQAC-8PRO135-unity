@@ -6,21 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/Scenes/intro.unity
+    path: Assets/Space game/Scenes/intro.unity
     guid: 8e278a4e6215270468cc69e9217098fd
   - enabled: 1
-    path: Assets/Game/Scenes/menu.unity
+    path: Assets/Space game/Scenes/menu.unity
     guid: 6e4275b3dc75dc8428fb6b45b7e9c822
   - enabled: 1
-    path: Assets/Game/Scenes/settings.unity
+    path: Assets/Space game/Scenes/settings.unity
     guid: ec3612a897cbee9448752bacdc8796c0
   - enabled: 1
-    path: Assets/Game/Scenes/game.unity
-    guid: 1d8f5a7a10a346d4bac30bf5cb60ab8f
-  - enabled: 1
-    path: Assets/Game/Scenes/victory.unity
-    guid: a9b9018a1a4561d418b2a471b15d52b5
-  - enabled: 1
-    path: Assets/Game/Scenes/defeat.unity
-    guid: c878259e4a53fe24daf71fec96a9cdb4
+    path: Assets/Space game/Scenes/Space.unity
+    guid: f238d2943bfcb604b965f373e866f90a
   m_configObjects: {}
