@@ -9,6 +9,7 @@ TagManager:
   - Key
   - Enemy
   - Lawnmower
+  - Asteroid
   layers:
   - Default
   - TransparentFX
