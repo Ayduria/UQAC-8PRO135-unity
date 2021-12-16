@@ -21,10 +21,10 @@ public class AsteroidMovement : MonoBehaviour
     TransformAccessArray transformsAccessArray;
 
     PositionUpdateJob positionJob;
-    TransformJob transformJob;
+    ArraysUpdateJob arraysUpdateJob;
 
     JobHandle positionJobHandle;
-    JobHandle transformJobHandle;
+    JobHandle arraysUpdateJobHandle;
 
     protected void Awake()
     {
@@ -62,7 +62,7 @@ public class AsteroidMovement : MonoBehaviour
         }
     }
 
-    struct TransformJob : IJobParallelFor
+    struct ArraysUpdateJob : IJobParallelFor
     {
         public NativeArray<Vector3> velocity;
         public NativeArray<Vector3> a_Rotation;
@@ -83,7 +83,7 @@ public class AsteroidMovement : MonoBehaviour
 
     public void Update()
     {
-        transformJob = new TransformJob()
+        arraysUpdateJob = new ArraysUpdateJob()
         {
             deltaTime = Time.deltaTime,
             velocity = velocities,
@@ -101,8 +101,8 @@ public class AsteroidMovement : MonoBehaviour
             rotation = rotations
         };
 
-        transformJobHandle = transformJob.Schedule(asteroidCount, 64);
-        positionJobHandle = positionJob.Schedule(transformsAccessArray, transformJobHandle);
+        arraysUpdateJobHandle = arraysUpdateJob.Schedule(asteroidCount, 64);
+        positionJobHandle = positionJob.Schedule(transformsAccessArray, arraysUpdateJobHandle);
     }
 
     public void LateUpdate()
