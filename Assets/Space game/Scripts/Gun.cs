@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun : MonoBehaviour, IPoolObject
 {
     public GameObject bullet;
+    bulletPooler currentBullet;
 
     public float shootForce, upwardForce;
 
@@ -15,6 +16,11 @@ public class Gun : MonoBehaviour
 
     public Camera cam;
     public Transform attackPoint;
+
+    private void Start() 
+    { 
+        currentBullet = bulletPooler.Instance;
+    }
 
     private void Awake() 
     {
@@ -30,7 +36,7 @@ public class Gun : MonoBehaviour
         if (shooting = Input.GetKeyDown(KeyCode.Mouse0)) {Shoot(); };
     }
 
-    private void Shoot() 
+    public void Shoot() 
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
@@ -42,9 +48,9 @@ public class Gun : MonoBehaviour
 
         Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
 
-        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity);
+        currentBullet.SpawnFromPool("Bullet", attackPoint.position, Quaternion.identity);// = Instantiate(bullet, attackPoint.position, Quaternion.identity);
+       
         currentBullet.transform.forward = directionWithoutSpread.normalized;
-
         currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * shootForce, ForceMode.Impulse);
     }
 }
