@@ -8,16 +8,9 @@ public class AsteroidCount : MonoBehaviour
     public Text AsteroidCountUI;
     private int asteroidCount;
 
-    // Update is called once per frame
-    void Start()
+    void Update()
     {
         asteroidCount = GameObject.FindGameObjectsWithTag("Asteroid").Length;
         AsteroidCountUI.text = "Asteroid count : " + asteroidCount;
-    }
-
-    void Update()
-    {
-        //int asteroidCount = GameObject.FindGameObjectsWithTag("Asteroid").Length;
-
     }
 }

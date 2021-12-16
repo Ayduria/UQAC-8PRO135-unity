@@ -9,9 +9,9 @@ public class ObjectSpawner : EditorWindow
     private GameObject parent;
     List<GameObject> spawnedObjects = new List<GameObject>();
     private string prefix = "spawned_";
-    private int spawnCount = 5;
+    private int spawnCount = 5000;
     private int totalSpawnCount = 0;
-    private int maxSpawnDistance = 40;
+    private int maxSpawnDistance = 1500;
     float minScaleVal = 5;
     float minScaleLimit = 1;
     float maxScaleVal = 10;
@@ -61,7 +61,6 @@ public class ObjectSpawner : EditorWindow
                 prefabInstance.transform.localScale = scale;
                 prefabInstance.name = prefix + prefabInstance.name;
                 prefabInstance.transform.eulerAngles = rotation;
-                prefabInstance.tag = "Asteroid";
 
                 if (parent != null)
                 {
