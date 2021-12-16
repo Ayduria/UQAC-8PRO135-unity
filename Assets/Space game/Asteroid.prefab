@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494976}
-  - component: {fileID: 146807188675599091}
   - component: {fileID: 7956215646686711988}
+  - component: {fileID: 146807188675599091}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -33,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7956215646686711988
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9191175
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &146807188675599091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,19 +60,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBarUI: {fileID: 2633106504724948801, guid: ddccabe5008e73d4a83cf951256d1452,
     type: 3}
---- !u!135 &7956215646686711988
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151664}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9191175
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &176588
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,8 @@ public class AsteroidHealth : MonoBehaviour
         healthBar.fillAmount = currentHealth / maxHealth;
         if (currentHealth == 0)
         {
+            AudioSource explosion = GameObject.Find("/ExplosionSound").GetComponent<AudioSource>();
+            explosion.Play();
             Destroy(this.gameObject);
         }
     }
