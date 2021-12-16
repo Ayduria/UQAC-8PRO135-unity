@@ -325,9 +325,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  angle_x: 30
-  angle_y: 45
-  rotationSpeed: 50
 --- !u!1 &1073951137
 GameObject:
   m_ObjectHideFlags: 0
