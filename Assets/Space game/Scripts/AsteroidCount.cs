@@ -11,6 +11,6 @@ public class AsteroidCount : MonoBehaviour
     void Update()
     {
         asteroidCount = GameObject.FindGameObjectsWithTag("Asteroid").Length;
-        AsteroidCountUI.text = "Asteroid count : " + asteroidCount;
+        AsteroidCountUI.text = asteroidCount + " asteroids remaining";
     }
 }
