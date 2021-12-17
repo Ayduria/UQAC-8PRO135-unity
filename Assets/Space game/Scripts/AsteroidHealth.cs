@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AsteroidHealth : MonoBehaviour
 {
+    public ParticleSystem explosion;
     public GameObject HealthBarUI;
     private Image healthBar;
     private float maxHealth = 100;
@@ -12,14 +13,13 @@ public class AsteroidHealth : MonoBehaviour
     private bool healthBarVisible = false;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         healthBar = HealthBarUI.transform.GetChild(0).GetChild(1).GetComponent<Image>();
-
         currentHealth = maxHealth;
     }
 
-    void OnMouseDown()
+    private void OnMouseDown()
     {
         TakeDamage();
         if (!healthBarVisible)
@@ -29,15 +29,18 @@ public class AsteroidHealth : MonoBehaviour
         }
     }
 
-    void TakeDamage()
+    private void TakeDamage()
     {
         currentHealth -= 50;
         healthBar.fillAmount = currentHealth / maxHealth;
         if (currentHealth == 0)
         {
-            AudioSource explosion = GameObject.Find("/ExplosionSound").GetComponent<AudioSource>();
+            this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            Instantiate(explosion, this.transform.position, Quaternion.identity, this.transform);
             explosion.Play();
-            Destroy(this.gameObject);
+            AudioSource explosionSound = GameObject.Find("/ExplosionSound").GetComponent<AudioSource>();
+            explosionSound.Play();
+            Destroy(this.gameObject, 0.8f);
         }
     }
 }

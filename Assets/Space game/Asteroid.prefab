@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981e797251c4a684c9113a968dc229b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 198656289721292014, guid: 64891a0eb28db934898420d80ca07cb3,
+    type: 3}
   HealthBarUI: {fileID: 2633106504724948801, guid: ddccabe5008e73d4a83cf951256d1452,
     type: 3}
 --- !u!1 &176588
