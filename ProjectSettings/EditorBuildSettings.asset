@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Space game/Scenes/settings.unity
     guid: ec3612a897cbee9448752bacdc8796c0
   - enabled: 1
-    path: Assets/Space game/Scenes/AsteroidTest.unity
-    guid: 64938cc85cf632e48832569c694c9c4f
-  - enabled: 1
     path: Assets/Space game/Scenes/Space.unity
     guid: f238d2943bfcb604b965f373e866f90a
   m_configObjects: {}
