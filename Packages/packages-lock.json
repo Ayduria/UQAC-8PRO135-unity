@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.intothedev.objectpooling": {
+      "version": "https://github.com/IntoTheDev/Object-Pooling-for-Unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ad4e053c5a8b3dbf2ac3db4676397f516166af4a"
+    },
     "com.unity.cinemachine": {
       "version": "2.6.11",
       "depth": 0,
@@ -43,6 +50,13 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
