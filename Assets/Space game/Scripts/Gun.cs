@@ -45,6 +45,6 @@ public class Gun : MonoBehaviour, IPoolObject
       
 
         currentBullet.transform.forward = directionWithoutSpread.normalized;
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithoutSpread.normalized * shootForce, ForceMode.Impulse);
+        currentBullet.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
     }
 }
