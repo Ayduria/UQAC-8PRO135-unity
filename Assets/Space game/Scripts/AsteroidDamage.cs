@@ -47,7 +47,7 @@ public class AsteroidDamage : MonoBehaviour
         Instantiate(explosion, this.transform.position, Quaternion.identity, this.transform);
         explosion.Play();
         CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
-        AudioSource explosionSound = GameObject.Find("/ExplosionSound").GetComponent<AudioSource>();
+        AudioSource explosionSound = GameObject.Find("Audio/ExplosionSound").GetComponent<AudioSource>();
         explosionSound.Play();
         Destroy(this.gameObject, 0.5f);
     }
