@@ -57,7 +57,7 @@ public class bulletPooler : MonoBehaviour
 
         Vector3 targetPoint;
 
-        if (Physics.Raycast(ray, out hit)) { targetPoint = hit.point; Debug.Log("SHOT"); }
+        if (Physics.Raycast(ray, out hit)) { targetPoint = hit.point; }
         else { targetPoint = ray.GetPoint(75); }
 
         Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
