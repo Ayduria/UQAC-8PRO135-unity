@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using System.Collections;
 using System.Collections.Generic;
 
 public class ObjectSpawner : EditorWindow
@@ -56,8 +55,10 @@ public class ObjectSpawner : EditorWindow
                 float randomRotation = Random.Range(minRotationVal, maxRotationVal);
                 var rotation = new Vector3(randomRotation, randomRotation, randomRotation);
 
-                GameObject prefabInstance = Instantiate(prefab, position, Quaternion.identity);
+                GameObject prefabInstance = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
 
+                prefabInstance.transform.position = position;
+                prefabInstance.transform.rotation = Quaternion.identity;
                 prefabInstance.transform.localScale = scale;
                 prefabInstance.name = prefix + prefabInstance.name;
                 prefabInstance.transform.eulerAngles = rotation;
