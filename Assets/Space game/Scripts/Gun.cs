@@ -8,12 +8,7 @@ public class Gun : MonoBehaviour, IPoolObject
 
     public float shootForce, upwardForce;
 
-    //public float timebetweenShooting, spread, timeBetweenShots;
-    //public int bulletsPerTap;
-
-    //int bulletsLeft, bulletsShot;
-
-    bool shooting, readyToShoot, reloading;
+    bool shooting, reloading;
 
     public Camera cam;
     public Transform attackPoint;
@@ -24,18 +19,13 @@ public class Gun : MonoBehaviour, IPoolObject
         shootingSound = this.gameObject.GetComponent<AudioSource>();
     }
 
-    private void Awake() 
-    {
-        readyToShoot = true; 
-    }
-
     private void Update() 
     {
         MyInput();
     }
     private void MyInput() 
     {
-        if (shooting = Input.GetKeyDown(KeyCode.Mouse0)) {Shoot(); };
+       if (shooting = Input.GetKeyDown(KeyCode.Mouse0)) {Shoot(); };
     }
 
     public void Shoot() 

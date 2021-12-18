@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class ShipController : MonoBehaviour 
 {
@@ -17,6 +16,8 @@ public class ShipController : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+
         screenCenter.x = Screen.width * .5f;
         screenCenter.y = Screen.height * .5f;
 

@@ -11,8 +11,8 @@ public class AsteroidMovement : MonoBehaviour
     protected GameObject[] asteroids;
     protected Transform[] transforms;
 
-    public Vector3 m_Acceleration = new Vector3(0.0002f, 0.0001f, 0.0002f);
-    public Vector3 m_AccelerationMod = new Vector3(.0001f, 0.001f, 0.0001f);
+    public Vector3 m_Acceleration = new Vector3(0.00001f, 0.00001f, 0.00001f);
+    public Vector3 m_AccelerationMod = new Vector3(.00001f, 0.00001f, 0.00001f);
     public Vector3 m_Rotation = new Vector3(0.0002f, 0.0001f, 0.0002f);
     public Vector3 m_RotationMod = new Vector3(.0001f, 0.001f, 0.0001f);
 

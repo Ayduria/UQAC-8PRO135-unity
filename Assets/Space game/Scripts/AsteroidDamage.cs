@@ -18,13 +18,16 @@ public class AsteroidDamage : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    private void OnMouseDown()
+    private void OnCollisionEnter(Collision collision)
     {
-        TakeDamage();
-        if (!healthBarVisible)
+        if (collision.gameObject.tag == "Projectile")
         {
-            GameObject healthBar = Instantiate(HealthBarUI, this.transform);
-            healthBarVisible = true;
+            TakeDamage();
+            if (!healthBarVisible)
+            {
+                GameObject healthBar = Instantiate(HealthBarUI, this.transform);
+                healthBarVisible = true;
+            }
         }
     }
 
@@ -46,6 +49,6 @@ public class AsteroidDamage : MonoBehaviour
         CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
         AudioSource explosionSound = GameObject.Find("/ExplosionSound").GetComponent<AudioSource>();
         explosionSound.Play();
-        Destroy(this.gameObject, 0.8f);
+        Destroy(this.gameObject, 0.7f);
     }
 }
